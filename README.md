@@ -133,7 +133,12 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
           <img src="https://avatars.githubusercontent.com/u/114218287?s=200&v=4">
         </a>
       </td>
-      <td align="center" valign="middle" colspan="5">
+      <td align="center" valign="middle" width="148">
+        <a href="https://www.prevo.ch/" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/114394792?v=4">
+        </a>
+      </td>
+      <td align="center" valign="middle" colspan="4">
         <a href="https://github.com/sponsors/NGPixel" target="_blank">
           <img src="https://static.requarks.io/sponsors/become-148x72.png">
         </a>
@@ -164,6 +169,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Florian Moss ([@florianmoss](https://github.com/florianmoss))
 - GoodCorporateCitizen ([@GoodCorporateCitizen](https://github.com/GoodCorporateCitizen))
 - HeavenBay ([@HeavenBay](https://github.com/heavenbay))
+- HikaruEgashira ([@HikaruEgashira](https://github.com/HikaruEgashira))
 - Ian Hyzy ([@ianhyzy](https://github.com/ianhyzy))
 - Jaimyn Mayer ([@jabelone](https://github.com/jabelone))
 - Jay Lee ([@polyglotm](https://github.com/polyglotm))
@@ -351,6 +357,23 @@ Support this project by becoming a sponsor. Your logo will show up in the Contri
         <a href="https://opencollective.com/wikijs/sponsor/39/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/39/avatar.svg"></a>
       </td>
     </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/40/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/40/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/41/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/41/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/42/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/42/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/43/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/43/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/44/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/44/avatar.svg"></a>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -382,22 +405,25 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Hope
 - Ian
 - Imari Childress
+- Iskander Callos
   
 </td><td>
 <img width="441" height="1" />
 
-- Iskander Callos
 - Josh Stewart
 - Justin Dunsworth
 - Keir
 - Loïc CRAMPON
 - Ludgeir Ibanez
+- Lyn Matten
+- Mads Rosendahl
 - Mark Mansur
 - Matt Gedigian
 - Nate Figz
 - Patryk
 - Philipp Schürch
 - Tracey Duffy
+- Quaxim
 - Richeir
 - Shad Narcher
 - SmartNET.works
@@ -435,6 +461,9 @@ This project exists thanks to all the people who contribute. [[Contribute]](http
 
 ![Lokalise](https://static.requarks.io/logo/lokalise-text-h40.png)  
 [Lokalise](https://lokalise.com/) for providing access to their great localization tool.
+
+![MacStadium](https://static.requarks.io/logo/macstadium-h40.png)  
+[MacStadium](https://www.macstadium.com) for providing access to their Mac hardware in the cloud.
 
 ![Netlify](https://js.wiki/legacy/logo_netlify.png)  
 [Netlify](https://www.netlify.com) for providing hosting for our website.
