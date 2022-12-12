@@ -201,6 +201,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Tyler Denman ([@tylerguy](https://github.com/tylerguy))
 - Victor Bilgin ([@vbilgin](https://github.com/vbilgin))
 - VMO Solutions ([@vmosolutions](https://github.com/vmosolutions))
+- ameyrakheja ([@ameyrakheja](https://github.com/ameyrakheja))
 - aniketpanjwani ([@aniketpanjwani](https://github.com/aniketpanjwani))
 - aytaa ([@aytaa](https://github.com/aytaa))
 - chaee ([@chaee](https://github.com/chaee))
@@ -406,11 +407,11 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Ian
 - Imari Childress
 - Iskander Callos
+- Josh Stewart
   
 </td><td>
 <img width="441" height="1" />
 
-- Josh Stewart
 - Justin Dunsworth
 - Keir
 - Loïc CRAMPON
@@ -425,9 +426,11 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Tracey Duffy
 - Quaxim
 - Richeir
+- Sergio Navarro Fernández
 - Shad Narcher
 - SmartNET.works
 - Stepan Sokolovskyi
+- Zach Crawford
 - Zach Maynard
 - 张白驹
 

@@ -50,10 +50,21 @@
         v-divider
       v-container.grey.pa-0(fluid, :class='$vuetify.theme.dark ? `darken-4-l3` : `lighten-4`')
         v-row.page-header-section(no-gutters, align-content='center', style='height: 90px;')
-          v-col.page-col-content.is-page-header(offset-xl='2', offset-lg='3', style='margin-top: auto; margin-bottom: auto;', :class='$vuetify.rtl ? `pr-4` : `pl-4`')
-            .headline.grey--text(:class='$vuetify.theme.dark ? `text--lighten-2` : `text--darken-3`') {{title}}
-            .caption.grey--text.text--darken-1 {{description}}
-            .page-edit-shortcuts(v-if='editShortcutsObj.editMenuBar')
+          v-col.page-col-content.is-page-header(
+            :offset-xl='tocPosition === `left` ? 2 : 0'
+            :offset-lg='tocPosition === `left` ? 3 : 0'
+            :xl='tocPosition === `right` ? 10 : false'
+            :lg='tocPosition === `right` ? 9 : false'
+            style='margin-top: auto; margin-bottom: auto;'
+            :class='$vuetify.rtl ? `pr-4` : `pl-4`'
+            )
+            .page-header-headings
+              .headline.grey--text(:class='$vuetify.theme.dark ? `text--lighten-2` : `text--darken-3`') {{title}}
+              .caption.grey--text.text--darken-1 {{description}}
+            .page-edit-shortcuts(
+              v-if='editShortcutsObj.editMenuBar'
+              :class='tocPosition === `right` ? `is-right` : ``'
+              )
               v-btn(
                 v-if='editShortcutsObj.editMenuBtn'
                 @click='pageEdit'
@@ -74,7 +85,13 @@
       v-divider
       v-container.pl-5.pt-4(fluid, grid-list-xl)
         v-layout(row)
-          v-flex.page-col-sd(lg3, xl2, v-if='$vuetify.breakpoint.lgAndUp')
+          v-flex.page-col-sd(
+            v-if='tocPosition !== `off` && $vuetify.breakpoint.lgAndUp'
+            :order-xs1='tocPosition !== `right`'
+            :order-xs2='tocPosition === `right`'
+            lg3
+            xl2
+            )
             v-card.page-toc-card.mb-5(v-if='tocDecoded.length')
               .overline.pa-5.pb-0(:class='$vuetify.theme.dark ? `blue--text text--lighten-2` : `primary--text`') {{$t('common:page.toc')}}
               v-list.pb-3(dense, nav, :class='$vuetify.theme.dark ? `darken-3-d3` : ``')
@@ -181,10 +198,10 @@
             v-card.page-shortcuts-card(flat)
               v-toolbar(:color='$vuetify.theme.dark ? `grey darken-4-d3` : `grey lighten-3`', flat, dense)
                 v-spacer
-                v-tooltip(bottom)
-                  template(v-slot:activator='{ on }')
-                    v-btn(icon, tile, v-on='on', :aria-label='$t(`common:page.bookmark`)'): v-icon(color='grey') mdi-bookmark
-                  span {{$t('common:page.bookmark')}}
+                //- v-tooltip(bottom)
+                //-   template(v-slot:activator='{ on }')
+                //-     v-btn(icon, tile, v-on='on', :aria-label='$t(`common:page.bookmark`)'): v-icon(color='grey') mdi-bookmark
+                //-   span {{$t('common:page.bookmark')}}
                 v-menu(offset-y, bottom, min-width='300')
                   template(v-slot:activator='{ on: menu }')
                     v-tooltip(bottom)
@@ -203,7 +220,13 @@
                   span {{$t('common:page.printFormat')}}
                 v-spacer
 
-          v-flex.page-col-content(xs12, lg9, xl10)
+          v-flex.page-col-content(
+            xs12
+            :lg9='tocPosition !== `off`'
+            :xl10='tocPosition !== `off`'
+            :order-xs1='tocPosition === `right`'
+            :order-xs2='tocPosition !== `right`'
+            )
             v-tooltip(:right='$vuetify.rtl', :left='!$vuetify.rtl', v-if='hasAnyPagePermissions && editShortcutsObj.editFab')
               template(v-slot:activator='{ on: onEditActivator }')
                 v-speed-dial(
@@ -536,6 +559,7 @@ export default {
     tocDecoded () {
       return JSON.parse(Buffer.from(this.toc, 'base64').toString())
     },
+    tocPosition: get('site/tocPosition'),
     hasAdminPermission: get('page/effectivePermissions@system.manage'),
     hasWritePagesPermission: get('page/effectivePermissions@pages.write'),
     hasManagePagesPermission: get('page/effectivePermissions@pages.manage'),
@@ -619,6 +643,8 @@ export default {
           this.$vuetify.goTo(decodeURIComponent(ev.currentTarget.hash), this.scrollOpts)
         }
       })
+
+      window.boot.notify('page-ready')
     })
   },
   methods: {
@@ -716,9 +742,20 @@ export default {
 .page-header-section {
   position: relative;
 
+  > .is-page-header {
+    position: relative;
+  }
+
+  .page-header-headings {
+    min-height: 52px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .page-edit-shortcuts {
     position: absolute;
-    bottom: -14px;
+    bottom: -33px;
     right: 10px;
 
     .v-btn {
